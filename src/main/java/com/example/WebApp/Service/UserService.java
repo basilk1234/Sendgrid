@@ -40,13 +40,13 @@ public class UserService {
         .signWith(SignatureAlgorithm.HS256, jwtSigningKey.getEncoded())
         .compact();
 
-        // Send email verification (implementation needed)
+        
         sendVerificationEmail(savedUser.getEmail(), jws);
 
         return savedUser;
     }
 private void sendVerificationEmail(String email, String token) {
-        Email from = new Email("your-email@example.com"); // Replace with your email address
+        Email from = new Email("your-email@example.com"); // Replace with the email address
         String subject = "Please verify your email";
         Email to = new Email(email);
         Content content = new Content("text/plain", "Thank you for registering. To complete your registration, please click on the following link: http://localhost:8080/verifyEmail?token=" + token);

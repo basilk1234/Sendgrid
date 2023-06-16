@@ -32,7 +32,7 @@ public class User {
     @Column(nullable = false)
     private Date updateDate;
 
-    // standard getters and setters
+    
     public Long getId() {
         return id;
     }
